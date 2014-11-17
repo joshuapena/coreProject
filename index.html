@@ -8,37 +8,67 @@
 	</head>
 	<body>
 		<div class="buttonContainer">
+
+			<p id="instructionsChoose">Choose the following buttons to start the game.</p>
+
 			<div class="container" id="sex">
-				<input id="male" value="Male" onclick="params.chooseSex('male')" type="button">
-				<input id="female" value="Female" onclick="params.chooseSex('female')" type="button">
-				<input id="noAnswerSex" value="Skip" onclick="params.chooseSex('skip')" type="Button">
+				<input id="male" value="Male" 
+					onclick="params.chooseSex('Male')" type="button">
+				<input id="female" value="Female" 
+					onclick="params.chooseSex('Female')" type="button">
+				<input id="noAnswerSex" value="Skip" 
+					onclick="params.chooseSex('Skip')" type="Button">
+			</div>
+			<div class="undo" id="sexUndo">
 				<p id="answerSex"></p>
+				<input class="undoButton" id="sexUndoButton" value="Undo" 
+					onclick="params.undoSex()" type="button">
 			</div>
 
 			<div class="container" id="ethnicity">
-				<input id="white" value="White" type="button">
-				<input id="asian" value="Asian or Pacific Islander" type="button">
-				<input id="black" value="Black" type="button">
-				<input id="hispanic" value="Hispanic or Latino" type="button">
-				<input id="americanIndian" value="American Indian or Alaska Native" type="button">
-				<input id="noAnswerEthnicity" value="Skip" type="button">
+				<input id="white" value="White" 
+					onclick="params.chooseEthnicity('White')" type="button">
+				<input id="asian" value="Asian or Pacific Islander" 
+					onclick="params.chooseEthnicity('Asian or Pacific Islander')" type="button">
+				<input id="black" value="Black" onclick="params.chooseEthnicity('Black')" 
+					type="button">
+				<input id="hispanic" value="Hispanic or Latino" 
+					onclick="params.chooseEthnicity('Asian')" type="button">
+				<input id="americanIndian" value="American Indian or Alaska Native" 
+					onclick="params.chooseEthnicity('American Indian or Alaska Native')" type="button">
+				<input id="noAnswerEthnicity" value="Skip" 
+					onclick="params.chooseEthnicity('Skip')" type="button">
+			</div>
+			<div class="undo" id="ethnicityUndo">
 				<p id="answerEthnicity"></p>
+				<input class="undoButton" id="ethnicityUndoButton" value="Undo"
+					onclick="params.undoEthnicity()" type="button">
 			</div>
 			
 			<div class="container" id="major">
-				<input id="bio" value="Biological and Agrricultural Sciences" type="button">
-				<input id="engineering" value="Engineering" type="button">
-				<input id="math" value="Mathematics, Statistics, and Computer Sciences" type="button">
-				<input id="physical" value="Physical Sciences" type="button">
-				<input id="social" value="Social and Behavioral Sciences" type="button">
-				<input id="noAnswerMajor" value="Skip" type="button">
+				<input id="bio" value="Biological and Agricultural Sciences"
+					onclick="params.chooseMajor('Biological and Agricultural Sciences')" type="button">
+				<input id="engineering" value="Engineering"
+					onclick="params.chooseMajor('Engineering')"type="button">
+				<input id="math" value="Mathematics, Statistics, and Computer Sciences"
+					onclick="params.chooseMajor('Mathematics, Statistics, and Computer Sciences')"type="button">
+				<input id="physical" value="Physical Sciences"
+					onclick="params.chooseMajor('Physical Sciences')"type="button">
+				<input id="social" value="Social and Behavioral Sciences"
+					onclick="params.chooseMajor('Social and Behavioral Sciences')"type="button">
+				<input id="noAnswerMajor" value="Skip"
+					onclick="params.chooseMajor('Skip')"type="button">
+			</div>
+			<div class="undo" id="majorUndo">
 				<p id="answerMajor"></p>
+				<input class="undoButton" id="majorUndoButton" value="Undo"
+					onclick="undoMajor()" type="button">
 			</div>
 		</div>
 
 		<div id="canvasContainer">
-			<p>Move Around Using the Arrow Keys<br>Shoot Using "A", "W", and "D"<br>Good Luck and Have Fun</p>
 			<input id="startButton" type="button" value="Start" onclick="start()" />
+			<p id="instructions">Move Around Using the Arrow Keys<br>Shoot Using "A", "W", and "D"<br>Good Luck and Have Fun</p>
 			<canvas id="world" width="600" height="300">
 				This browser can not run this game (canvas support missing).
 			</canvas>

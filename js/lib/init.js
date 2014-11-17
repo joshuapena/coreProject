@@ -2,6 +2,7 @@
 
 var start = function() {
 	document.getElementById("world").style.display = "inline";
+	document.getElementById("instructions").style.display = "inline";
 	document.getElementById("startButton").style.display = "none";
 	
 	var sprites = initGame();
