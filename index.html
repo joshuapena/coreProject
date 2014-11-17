@@ -3,10 +3,39 @@
 <html lang="en">
 	<head>
 		<meta charset="utf-8" />
-		<title>Game</title>
+		<title>Core Project</title>
 		<link rel="stylesheet" href="assets/css/default.css" />
 	</head>
 	<body>
+		<div class="buttonContainer">
+			<div class="container" id="sex">
+				<input id="male" value="Male" onclick="params.chooseSex('male')" type="button">
+				<input id="female" value="Female" onclick="params.chooseSex('female')" type="button">
+				<input id="noAnswerSex" value="Skip" onclick="params.chooseSex('skip')" type="Button">
+				<p id="answerSex"></p>
+			</div>
+
+			<div class="container" id="ethnicity">
+				<input id="white" value="White" type="button">
+				<input id="asian" value="Asian or Pacific Islander" type="button">
+				<input id="black" value="Black" type="button">
+				<input id="hispanic" value="Hispanic or Latino" type="button">
+				<input id="americanIndian" value="American Indian or Alaska Native" type="button">
+				<input id="noAnswerEthnicity" value="Skip" type="button">
+				<p id="answerEthnicity"></p>
+			</div>
+			
+			<div class="container" id="major">
+				<input id="bio" value="Biological and Agrricultural Sciences" type="button">
+				<input id="engineering" value="Engineering" type="button">
+				<input id="math" value="Mathematics, Statistics, and Computer Sciences" type="button">
+				<input id="physical" value="Physical Sciences" type="button">
+				<input id="social" value="Social and Behavioral Sciences" type="button">
+				<input id="noAnswerMajor" value="Skip" type="button">
+				<p id="answerMajor"></p>
+			</div>
+		</div>
+
 		<div id="canvasContainer">
 			<p>Move Around Using the Arrow Keys<br>Shoot Using "A", "W", and "D"<br>Good Luck and Have Fun</p>
 			<input id="startButton" type="button" value="Start" onclick="start()" />
@@ -16,6 +45,7 @@
 		</div>
 		
 		<script type="text/javascript" src="js/lib/Game.js"></script>
+		<script type="text/javascript" src="js/lib/getParams.js"></script>
 		<script type="text/javascript" src="js/lib/init.js"></script>
 		<script type="text/javascript" src="js/lib/SpriteLoader.js"></script>
 		<script type="text/javascript" src="js/lib/SoundLoader.js"></script>
@@ -27,16 +57,9 @@
 		<script type="text/javascript" src="js/gameentities/Player.js"></script>
 		<script type="text/javascript" src="js/gameentities/Platform.js"></script>
 		<script type="text/javascript" src="js/gameentities/Spike.js"></script>
-		
-		<script type="text/javascript">
-			function start2(a, b, callback, c, d) {
-				document.write(a + b);
-				callback();
-				document.write(c+d);
-			}
-			function say() {
-				alert("here");
-			}
+
+		<script>
+			params = new Params();
 		</script>
 	</body>
 </html>

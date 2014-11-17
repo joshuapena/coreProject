@@ -12,6 +12,22 @@ body {
 	text-align: center;
 }
 
+.buttonContainer {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#sex {
+}
+
+#ethnicity {
+	display: none;
+}
+
+#major {
+	display: none;
+}
+
 #world {
 	border: 1px solid black;
 	display: none;
