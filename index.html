@@ -62,13 +62,13 @@
 			<div class="undo" id="majorUndo">
 				<p id="answerMajor"></p>
 				<input class="undoButton" id="majorUndoButton" value="Undo"
-					onclick="undoMajor()" type="button">
+					onclick="params.undoMajor()" type="button">
 			</div>
 		</div>
 
 		<div id="canvasContainer">
-			<input id="startButton" type="button" value="Start" onclick="start()" />
-			<p id="instructions">Move Around Using the Arrow Keys<br>Shoot Using "A", "W", and "D"<br>Good Luck and Have Fun</p>
+			<input id="startButton" type="button" value="Start" onclick="start(params)" />
+			<p id="instructions">Move Around Using the Arrow Keys and try to get to the end.<br>Good Luck and Have Fun.</p>
 			<canvas id="world" width="600" height="300">
 				This browser can not run this game (canvas support missing).
 			</canvas>

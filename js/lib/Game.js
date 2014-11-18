@@ -1,11 +1,14 @@
-var Game = function(canvas, sprites, audio, Explosion) {
+var Game = function(canvas, sprites, audio, params) {
 	this.fps = 60;
 	var canvas = canvas;
 	this.ctx = canvas.getContext("2d");
 	this.sprites = sprites;
 	this.audio = audio;
-	this.explosion = Explosion;
 	this.backgroundSound = "casanova";
+
+    console.log(params.sex);
+    console.log(params.ethnicity);
+    console.log(params.major);
 		
 	var worldOptions = {
 		width : canvas.width,

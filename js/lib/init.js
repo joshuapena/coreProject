@@ -1,6 +1,6 @@
 "use strict";
 
-var start = function() {
+var start = function(params) {
 	document.getElementById("world").style.display = "inline";
 	document.getElementById("instructions").style.display = "inline";
 	document.getElementById("startButton").style.display = "none";
@@ -8,7 +8,7 @@ var start = function() {
 	var sprites = initGame();
 	var audio = initSound();
 	
-	var game = new Game(document.getElementById("world"), sprites, audio);
+	var game = new Game(document.getElementById("world"), sprites, audio, params);
 }
 
 function initGame() {

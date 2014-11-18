@@ -15,7 +15,9 @@ Params.prototype.chooseSex = function(sex) {
     document.getElementById("answerSex").innerHTML = "You have choosen '" + this.sex + "'.";
 
     document.getElementById("sex").style.display = "none";
-    document.getElementById("ethnicity").style.display = "inline";
+    if (!this.ethnicity) {
+        document.getElementById("ethnicity").style.display = "inline";
+    }
     document.getElementById("sexUndo").style.display = "inline";
     document.getElementById("sexUndoButton").style.display = "inline";
     console.log(this.sexChosen);
@@ -31,7 +33,9 @@ Params.prototype.chooseEthnicity = function(ethnicity) {
         "You have choosen '" + this.ethnicity + "'.";
 
     document.getElementById("ethnicity").style.display = "none";
-    document.getElementById("major").style.display = "inline";
+    if (!this.major) {
+        document.getElementById("major").style.display = "inline";
+    }
     document.getElementById("ethnicityUndo").style.display = "inline";
     document.getElementById("ethnicityUndoButton").style.display = "inline";
 
@@ -55,20 +59,31 @@ Params.prototype.chooseMajor = function(major) {
 Params.prototype.undoSex = function() {
     this.sexChosen = false;
     document.getElementById("sex").style.display = "inline";
+    document.getElementById("sexUndo").style.display = "none";
+
+    this.check();
 };
 
 Params.prototype.undoEthnicity = function() {
     this.ethnicityChosen = false;
     document.getElementById("ethnicity").style.display = "inline";
+    document.getElementById("ethnicityUndo").style.display = "none";
+
+    this.check();
 };
 
 Params.prototype.undoMajor = function() {
     this.majorChosen = false;
     document.getElementById("major").style.display = "inline";
+    document.getElementById("majorUndo").style.display = "none";
+
+    this.check();
 };
 
 Params.prototype.check = function() {
     if (this.sexChosen && this.ethnicityChosen && this.majorChosen) {
         document.getElementById("startButton").style.display = "inline";
+    } else {
+        document.getElementById("startButton").style.display = "none";
     }
 };
