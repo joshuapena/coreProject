@@ -16,8 +16,15 @@ var collider = function(game) {
 
         game.world.spikes.forEach(function(spike) {
             if (collides(player, spike)) {
+                console.log("foo");
                 player.explode(15);
                 spike.explode();
+            }
+        });
+
+        game.world.assets.forEach(function(asset) {
+            if (collides(player, asset)) {
+                player.finished();
             }
         });
     });

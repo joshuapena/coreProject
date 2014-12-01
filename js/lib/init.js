@@ -18,7 +18,7 @@ var start = function(params) {
 function initGame() {
 	var spriteLoader = new SpriteLoader();
 	var sprites = {};
-	var spriteNames = [];
+	var spriteNames = ["endFlag"];
 	for (var i = 1; i < 7; i++) {
 		spriteNames.push("connor/connorL" + i);
 		spriteNames.push("connor/connorR" + i);

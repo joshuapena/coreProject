@@ -9,6 +9,7 @@ var World = function(context, options, sprites) {
 	this.players = [];
 	this.platforms = [];
     this.spikes = [];
+    this.assets = [];
 	
     this.died = false;
 	this.end = false;

@@ -42,10 +42,9 @@ var Player = function(world, audio) {
 		width: this.hitboxMetrics.width,
 		height: this.hitboxMetrics.height
 	};
-	
-	this.kills = 20;
-	this.lives = 10;
-	
+
+    this.lives = 1;
+    this.reachEnd = false;
 };
 
 var keydown = [];
@@ -165,6 +164,11 @@ Player.prototype.updateHitbox = function() {
 		width: this.hitboxMetrics.width,
 		height: this.hitboxMetrics.height
 	};
+};
+
+Player.prototype.finished = function() {
+    this.reachEnd = true;
+    this.active = false;
 };
 
 document.body.addEventListener("keydown", function(e) {

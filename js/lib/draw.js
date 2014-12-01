@@ -5,7 +5,8 @@ var draw = function(world) {
 	
 	[world.platforms,
 	world.players,
-    world.spikes
+    world.spikes,
+    world.assets
 	].forEach (
 		function (gameElementArray) {
 			gameElementArray.forEach(function(gameElement) {

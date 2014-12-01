@@ -3,12 +3,12 @@
 var EndLine = function(world, options) {
 	this.world = world;
 	this.color = options.color || "#EEE";
-    this.spriteName = null;
+    this.spriteName = options.spriteName || null;
 	
 	this.x = options.x;
 	this.y = options.y;
-	this.width = options.width || 50;
-	this.height = options.height || 5;
+	this.width = options.width || 24;
+	this.height = options.height || 30;
 	
 	this.active = true;
 	

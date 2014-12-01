@@ -5,6 +5,7 @@ var nextStage = false;
 var minionTime = false;
 var bossTime = true;
 var round = 0;
+var playerEnd = false;
 
 var test = true;
 
@@ -22,6 +23,9 @@ var update = function (game, CatEnemy, Bullet, audio, Explosion) {
 	
 	game.world.players.forEach( function(player) {
         player.update();
+        if (player.reachEnd === true) {
+            playerEnd = true;
+        }
     });
 
     game.world.players = game.world.players.filter(function(player) {
@@ -32,11 +36,22 @@ var update = function (game, CatEnemy, Bullet, audio, Explosion) {
 		return platform.active;
 	});
 	
-	if (game.world.players.length < 1) {
+    if (playerEnd === true) {
+        game.world.end = true;
+    } else if (game.world.players.length < 1) {
        game.world.died = true; 
     } else if (test) {
+        // End Flag
+        game.world.assets.push (new EndLine(game.world, {
+            x: game.world.width - 60,
+            y: game.world.height - 60,
+            spriteName: "endFlag"
+        }));
+
+        // Spikes
         game.world.spikes.push (new Spike(game.world));
 
+        // Moving Spikes
         game.world.spikes.push (new MovingSpike(game.world, {
             topBound: 1,
             bottomBound: game.world.height - 100
@@ -54,6 +69,7 @@ var update = function (game, CatEnemy, Bullet, audio, Explosion) {
             height: 200
         }));
 
+        // Platforms
         game.world.platforms.push(new Platform(game.world, {
 			x: 175,
 			y: 250,
