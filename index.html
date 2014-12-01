@@ -7,9 +7,15 @@
 		<link rel="stylesheet" href="assets/css/default.css" />
 	</head>
 	<body>
+		<div class="container">
+			<h1>Merrill Core Project</h1>
+			<p>By : Joshua Pena</p>
+			<p>Merrill 80B - 02</p> <br>
+		</div>
 		<div class="buttonContainer">
 
 			<p id="instructionsChoose">Choose the following buttons to start the game.</p>
+			<p id="completeAnswer"></p>
 
 			<div class="container" id="sex">
 				<input id="male" value="Male" 
@@ -18,11 +24,7 @@
 					onclick="params.chooseSex('Female')" type="button">
 				<input id="noAnswerSex" value="Skip" 
 					onclick="params.chooseSex('Skip')" type="Button">
-			</div>
-			<div class="undo" id="sexUndo">
-				<p id="answerSex"></p>
-				<input class="undoButton" id="sexUndoButton" value="Undo" 
-					onclick="params.undoSex()" type="button">
+				<br>
 			</div>
 
 			<div class="container" id="ethnicity">
@@ -38,13 +40,9 @@
 					onclick="params.chooseEthnicity('American Indian or Alaska Native')" type="button">
 				<input id="noAnswerEthnicity" value="Skip" 
 					onclick="params.chooseEthnicity('Skip')" type="button">
+				<br>
 			</div>
-			<div class="undo" id="ethnicityUndo">
-				<p id="answerEthnicity"></p>
-				<input class="undoButton" id="ethnicityUndoButton" value="Undo"
-					onclick="params.undoEthnicity()" type="button">
-			</div>
-			
+
 			<div class="container" id="major">
 				<input id="bio" value="Biological and Agricultural Sciences"
 					onclick="params.chooseMajor('Biological and Agricultural Sciences')" type="button">
@@ -58,20 +56,32 @@
 					onclick="params.chooseMajor('Social and Behavioral Sciences')"type="button">
 				<input id="noAnswerMajor" value="Skip"
 					onclick="params.chooseMajor('Skip')"type="button">
+				<br>
+			</div>
+
+			<br>
+
+			<div class="undo" id="sexUndo">
+				<input class="undoButton" id="sexUndoButton" value="Change Sex" 
+					onclick="params.undoSex()" type="button">
+			</div>
+			<div class="undo" id="ethnicityUndo">
+				<input class="undoButton" id="ethnicityUndoButton" value="Change Ethnicity"
+					onclick="params.undoEthnicity()" type="button">
 			</div>
 			<div class="undo" id="majorUndo">
-				<p id="answerMajor"></p>
-				<input class="undoButton" id="majorUndoButton" value="Undo"
+				<input class="undoButton" id="majorUndoButton" value="Change Major"
 					onclick="params.undoMajor()" type="button">
 			</div>
 		</div>
 
 		<div id="canvasContainer">
 			<input id="startButton" type="button" value="Start" onclick="start(params)" />
-			<p id="instructions">Move Around Using the Arrow Keys and try to get to the end.<br>Good Luck and Have Fun.</p>
 			<canvas id="world" width="600" height="300">
 				This browser can not run this game (canvas support missing).
 			</canvas>
+			<br>
+			<p id="instructions">Move Around Using the Arrow Keys and try to get to the end.<br>Good Luck and Have Fun.<br></p>
 		</div>
 		
 		<script type="text/javascript" src="js/lib/Game.js"></script>
@@ -87,6 +97,7 @@
 		<script type="text/javascript" src="js/gameentities/Player.js"></script>
 		<script type="text/javascript" src="js/gameentities/Platform.js"></script>
 		<script type="text/javascript" src="js/gameentities/Spike.js"></script>
+		<script type="text/javascript" src="js/gameentities/MovingSpike.js"></script>
 
 		<script>
 			params = new Params();

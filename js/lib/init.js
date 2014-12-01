@@ -4,6 +4,10 @@ var start = function(params) {
 	document.getElementById("world").style.display = "inline";
 	document.getElementById("instructions").style.display = "inline";
 	document.getElementById("startButton").style.display = "none";
+    document.getElementById("instructionsChoose").style.display = "none";
+    document.getElementById("sexUndo").style.display = "none";
+    document.getElementById("ethnicityUndo").style.display = "none";
+    document.getElementById("majorUndo").style.display = "none";
 	
 	var sprites = initGame();
 	var audio = initSound();

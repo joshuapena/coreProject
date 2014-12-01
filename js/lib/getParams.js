@@ -12,7 +12,7 @@ Params.prototype.chooseSex = function(sex) {
     this.sex = sex;
     this.sexChosen = true;
 
-    document.getElementById("answerSex").innerHTML = "You have choosen '" + this.sex + "'.";
+    this.changeTotalAnswer();
 
     document.getElementById("sex").style.display = "none";
     if (!this.ethnicity) {
@@ -29,8 +29,7 @@ Params.prototype.chooseEthnicity = function(ethnicity) {
     this.ethnicity = ethnicity;
     this.ethnicityChosen = true;
 
-    document.getElementById("answerEthnicity").innerHTML = 
-        "You have choosen '" + this.ethnicity + "'.";
+    this.changeTotalAnswer();
 
     document.getElementById("ethnicity").style.display = "none";
     if (!this.major) {
@@ -46,8 +45,7 @@ Params.prototype.chooseMajor = function(major) {
     this.major = major;
     this.majorChosen = true;
 
-    document.getElementById("answerMajor").innerHTML = 
-        "You have choosen '" + this.major + "'.";
+    this.changeTotalAnswer();
 
     document.getElementById("major").style.display = "none";
     document.getElementById("majorUndo").style.display = "inline";
@@ -86,4 +84,9 @@ Params.prototype.check = function() {
     } else {
         document.getElementById("startButton").style.display = "none";
     }
+};
+
+Params.prototype.changeTotalAnswer = function() {
+    document.getElementById("completeAnswer").innerHTML = "You have choosen a(n) '" 
+        + this.ethnicity + "' '" + this.sex + "' majoring in '" + this.major + "'.";
 };

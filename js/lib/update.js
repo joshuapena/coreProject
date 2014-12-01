@@ -11,6 +11,7 @@ var test = true;
 var update = function (game, CatEnemy, Bullet, audio, Explosion) {
 
 	[game.world.platforms,
+     game.world.spikes
 	].forEach (
 		function(gameElementArray) {
 			gameElementArray.forEach(function(gameElement) {
@@ -35,6 +36,17 @@ var update = function (game, CatEnemy, Bullet, audio, Explosion) {
        game.world.died = true; 
     } else if (test) {
         game.world.spikes.push (new Spike(game.world));
+
+        game.world.spikes.push (new MovingSpike(game.world, {
+            topBound: 1,
+            bottomBound: game.world.height - 100
+        }));
+        game.world.spikes.push (new MovingSpike(game.world, {
+            rightBound: game.world.width - 100,
+            leftBound: 100
+        }));
+
+        // The floor
         game.world.platforms.push (new Platform(game.world, {
             x: 0,
             y: game.world.height - 30,

@@ -19,6 +19,8 @@ var Spike = function(world, options) {
     };
 };
 
+Spike.prototype.update = function() {
+}; 
 Spike.prototype.draw = function() {
     if (this.spriteName === null) {
         this.world.drawRectangle("#008000", this.x, this.y, this.width, this.height);
