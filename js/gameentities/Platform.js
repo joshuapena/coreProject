@@ -17,6 +17,8 @@ var Platform = function(world, options) {
 		width: this.width,
 		height: this.height
 	}
+    console.log("width : " + this.width);
+    console.log("hitbox : " + this.hitbox.width);
 };
 
 Platform.prototype.update = function() {

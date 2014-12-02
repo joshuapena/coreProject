@@ -24,8 +24,8 @@ var MovingSpike = function(world, options) {
     this.hitboxMetrics = {
         x: 0,
         y: 0,
-        width: 30,
-        height: 30
+        width: this.width,
+        height: this.height
     };
 
     this.hitbox = {

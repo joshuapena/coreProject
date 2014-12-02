@@ -50,16 +50,9 @@ var Player = function(world, audio) {
 var keydown = [];
 
 Player.prototype.explode = function(damage, object) {
-	var that = this;
-    if (object != "glitterCannon") {
-	//if (!this.hit) {
-        this.lives -= damage;
-        this.hit = true;
-	//	setTimeout(function() {
-	//				that.hit = false;
-	//			}, 500);
-	//  } 
-    }
+    this.lives -= damage;
+    console.log("foo");
+    this.hit = true;
     if (this.lives < 1) {
         console.log("You Died");
         this.active = false;

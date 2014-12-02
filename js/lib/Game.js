@@ -5,6 +5,7 @@ var Game = function(canvas, sprites, audio, params) {
 	this.sprites = sprites;
 	this.audio = audio;
 	this.backgroundSound = "casanova";
+    this.params = params;
 
     console.log(params.sex);
     console.log(params.ethnicity);
@@ -23,7 +24,7 @@ var Game = function(canvas, sprites, audio, params) {
 	
 	var gameloop = setInterval(function() {
 		collider(game);
-		update(game, audio);
+		update(game, this.params, audio);
 		draw(game.world);
 	}, 1000 / this.fps);
 }
