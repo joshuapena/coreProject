@@ -7,8 +7,8 @@ var MovingSpike = function(world, options) {
 
     this.width = 30;
     this.height = 30;
-    this.x = this.world.width / 2;
-    this.y = this.world.height / 2;
+    this.x = options.x || this.world.width / 2;
+    this.y = options.y || this.world.height / 2;
     this.type = "enemy";
 
     this.leftBound = options.leftBound || null;
@@ -17,9 +17,9 @@ var MovingSpike = function(world, options) {
     this.bottomBound = options.bottomBound || null;
     this.velX = 0;
     this.velY = 0;
-    this.speed = 2;
-    this.movingUp = false;
-    this.movingRight = false;
+    this.speed = options.speed || 2;
+    this.movingUp = options.movingUp || false;
+    this.movingRight = options.movingRight || false;
 
     this.hitboxMetrics = {
         x: 0,
@@ -44,7 +44,6 @@ MovingSpike.prototype.update = function() {
     } else {
         if (this.velY < this.speed) {
             this.velY++;
-            console.log("bar");
         }
     }
 

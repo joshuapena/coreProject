@@ -7,8 +7,8 @@ var Spike = function(world, options) {
 
     this.width = 30;
     this.height = 30;
-    this.x = this.world.width / 2;
-    this.y = this.world.height - this.height;
+    this.x = options.x || this.world.width / 2;
+    this.y = options.y || this.world.height - this.height;
     this.type = "enemy";
 
     this.hitbox = {
