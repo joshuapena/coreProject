@@ -81,6 +81,22 @@ Params.prototype.undoMajor = function() {
 };
 
 Params.prototype.check = function() {
+    if (this.sexChosen) {
+        document.getElementById("checkSex").style.display = "inline";
+    } else {
+        document.getElementById("checkSex").style.display = "none";
+    }
+    if (this.ethnicityChosen) {
+        document.getElementById("checkEthnicity").style.display = "inline";
+    } else {
+        document.getElementById("checkEthnicity").style.display = "none";
+    }
+    if (this.majorChosen) {
+        document.getElementById("checkMajor").style.display = "inline";
+    } else {
+        document.getElementById("checkMajor").style.display = "none";
+    }
+
     if (this.sexChosen && this.ethnicityChosen && this.majorChosen) {
         document.getElementById("startButton").style.display = "inline";
     } else {
