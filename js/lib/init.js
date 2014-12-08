@@ -11,6 +11,8 @@ var start = function(params) {
 	
 	var sprites = initGame();
 	var audio = initSound();
+
+    params.setPercent();
 	
 	var game = new Game(document.getElementById("world"), sprites, audio, params);
 }

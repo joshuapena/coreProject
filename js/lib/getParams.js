@@ -3,6 +3,8 @@ var Params = function() {
     this.ethnicity = null;
     this.major = null;
 
+    this.percent = null;
+
     this.sexChosen = false;
     this.ethnicityChosen = false;
     this.majorChosen = false;
@@ -89,4 +91,424 @@ Params.prototype.check = function() {
 Params.prototype.changeTotalAnswer = function() {
     document.getElementById("completeAnswer").innerHTML = "You have choosen a(n) '" 
         + this.ethnicity + "' '" + this.sex + "' majoring in '" + this.major + "'.";
+};
+
+Params.prototype.setPercent = function() {
+    switch (this.sex) {
+        case ("Male"):
+            switch (this.ethnicity) {
+                case ("White"):
+                    switch (this.major) {
+                        case ("Biological and Agricultural Sciences"):
+                            this.percent = 42;
+                            break;
+                        case ("Engineering"):
+                            this.percent = 29;
+                            break;
+                        case ("Mathematics, Statistics, and Computer Sciences"):
+                            this.percent = 83;
+                            break;
+                        case ("Physical Sciences"):
+                            this.percent = 39;
+                            break;
+                        case ("Social and Behavioral Sciences"):
+                            this.percent = 98;
+                            break;
+                        default:
+                            this.percent = 51;
+                            break;
+                    }
+                    break;
+                case ("Asian or Pacific Islander"):
+                    switch (this.major) {
+                        case ("Biological and Agricultural Sciences"):
+                            this.percent = 47;
+                            break;
+                        case ("Engineering"):
+                            this.percent = 36; 
+                            break;
+                        case ("Mathematics, Statistics, and Computer Sciences"):
+                            this.percent =  58;
+                            break;
+                        case ("Physical Sciences"):
+                            this.percent =  50;
+                            break;
+                        case ("Social and Behavioral Sciences"):
+                            this.percent =  132;
+                            break;
+                        default:
+                            this.percent =  54;
+                            break;
+                    }
+                    break;
+                case ("Black"):
+                    switch (this.major) {
+                        case ("Biological and Agricultural Sciences"):
+                            this.percent =  16;
+                            break;
+                        case ("Engineering"):
+                            this.percent =  10;
+                            break;
+                        case ("Mathematics, Statistics, and Computer Sciences"):
+                            this.percent =  38;
+                            break;
+                        case ("Physical Sciences"):
+                            this.percent =  19;
+                            break;
+                        case ("Social and Behavioral Sciences"):
+                            this.percent =  63;
+                            break;
+                        default:
+                            this.percent =  27;
+                            break;
+                    }
+                    break;
+                case ("Hispanic or Latio"):
+                    switch (this.major) {
+                        case ("Biological and Agricultural Sciences"):
+                            this.percent =  20;
+                            break;
+                        case ("Engineering"):
+                            this.percent =  15;
+                            break;
+                        case ("Mathematics, Statistics, and Computer Sciences"):
+                            this.percent =  42;
+                            break;
+                        case ("Physical Sciences"):
+                            this.percent =  22;
+                            break;
+                        case ("Social and Behavioral Sciences"):
+                            this.percent =  59;
+                            break;
+                        default:
+                            this.percent =  28;
+                            break;
+                    }
+                    break;
+                case ("American Indian or Alaska Native"):
+                    switch (this.major) {
+                        case ("Biological and Agricultural Sciences"):
+                            this.percent =  18;
+                            break;
+                        case ("Engineering"):
+                            this.percent =  14;
+                            break;
+                        case ("Mathematics, Statistics, and Computer Sciences"):
+                            this.percent =  37;
+                            break;
+                        case ("Physical Sciences"):
+                            this.percent =  20;
+                            break;
+                        case ("Social and Behavioral Sciences"):
+                            this.percent =  54;
+                            break;
+                        default:
+                            this.percent =  29;
+                            break;
+                    }
+                    break;
+                default:
+                    switch (this.major) {
+                        case ("Biological and Agricultural Sciences"):
+                            this.percent =  35;
+                            break;
+                        case ("Engineering"):
+                            this.percent =  27;
+                            break;
+                        case ("Mathematics, Statistics, and Computer Sciences"):
+                            this.percent =  71;
+                            break;
+                        case ("Physical Sciences"):
+                            this.percent =  37;
+                            break;
+                        case ("Social and Behavioral Sciences"):
+                            this.percent =  92;
+                            break;
+                        default:
+                            this.percent =  46;
+                            break;
+                    }
+                    break;
+
+            }
+            break;
+        case (female):
+            switch (this.ethnicity) {
+                case ("White"):
+                    switch (this.major) {
+                        case ("Biological and Agricultural Sciences"):
+                            this.percent =  36;
+                            break;
+                        case ("Engineering"):
+                            this.percent =  27;
+                            break;
+                        case ("Mathematics, Statistics, and Computer Sciences"):
+                            this.percent =  85;
+                            break;
+                        case ("Physical Sciences"):
+                            this.percent =  36;
+                            break;
+                        case ("Social and Behavioral Sciences"):
+                            this.percent =  106;
+                            break;
+                        default:
+                            this.percent =  61;
+                            break;
+                    }
+                    break;
+                case ("Asian or Pacific Islander"):
+                    switch (this.major) {
+                        case ("Biological and Agricultural Sciences"):
+                            this.percent = 46; 
+                            break;
+                        case ("Engineering"):
+                            this.percent =  33;
+                            break;
+                        case ("Mathematics, Statistics, and Computer Sciences"):
+                            this.percent =  62;
+                            break;
+                        case ("Physical Sciences"):
+                            this.percent =  51;
+                            break;
+                        case ("Social and Behavioral Sciences"):
+                            this.percent =  126;
+                            break;
+                        default:
+                            this.percent =  64;
+                            break;
+                    }
+                    break;
+                case ("Black"):
+                    switch (this.major) {
+                        case ("Biological and Agricultural Sciences"):
+                            this.percent =  15;
+                            break;
+                        case ("Engineering"):
+                            this.percent =  11;
+                            break;
+                        case ("Mathematics, Statistics, and Computer Sciences"):
+                            this.percent =  55;
+                            break;
+                        case ("Physical Sciences"):
+                            this.percent =  23;
+                            break;
+                        case ("Social and Behavioral Sciences"):
+                            this.percent =  63;
+                            break;
+                        default:
+                            this.percent =  36;
+                            break;
+                    }
+                    break;
+                case ("Hispanic or Latio"):
+                    switch (this.major) {
+                        case ("Biological and Agricultural Sciences"):
+                            this.percent =  19;
+                            break;
+                        case ("Engineering"):
+                            this.percent =  20;
+                            break;
+                        case ("Mathematics, Statistics, and Computer Sciences"):
+                            this.percent =  46;
+                            break;
+                        case ("Physical Sciences"):
+                            this.percent =  31;
+                            break;
+                        case ("Social and Behavioral Sciences"):
+                            this.percent =  57;
+                            break;
+                        default:
+                            this.percent =  38;
+                            break;
+                    }
+                    break;
+                case ("American Indian or Alaska Native"):
+                    switch (this.major) {
+                        case ("Biological and Agricultural Sciences"):
+                            this.percent =  26;
+                            break;
+                        case ("Engineering"):
+                            this.percent =  8;
+                            break;
+                        case ("Mathematics, Statistics, and Computer Sciences"):
+                            this.percent =  32;
+                            break;
+                        case ("Physical Sciences"):
+                            this.percent =  65;
+                            break;
+                        case ("Social and Behavioral Sciences"):
+                            this.percent =  68;
+                            break;
+                        default:
+                            this.percent =  39;
+                            break;
+                    }
+                    break;
+                default:
+                    switch (this.major) {
+                        case ("Biological and Agricultural Sciences"):
+                            this.percent = 31;
+                            break;
+                        case ("Engineering"):
+                            this.percent =  25;
+                            break;
+                        case ("Mathematics, Statistics, and Computer Sciences"):
+                            this.percent =  76;
+                            break;
+                        case ("Physical Sciences"):
+                            this.percent =  34;
+                            break;
+                        case ("Social and Behavioral Sciences"):
+                            this.percent =  93;
+                            break;
+                        default:
+                            this.percent =  54;
+                            break;
+                    }
+                    break;
+
+            }
+            break;
+        default:
+            switch (this.ethnicity) {
+                case ("White"):
+                    switch (this.major) {
+                        case ("Biological and Agricultural Sciences"):
+                            this.percent =  38;
+                            break;
+                        case ("Engineering"):
+                            this.percent =  29;
+                            break;
+                        case ("Mathematics, Statistics, and Computer Sciences"):
+                            this.percent =  82;
+                            break;
+                        case ("Physical Sciences"):
+                            this.percent =  39;
+                            break;
+                        case ("Social and Behavioral Sciences"):
+                            this.percent =  102;
+                            break;
+                        default:
+                            this.percent =  55;
+                            break;
+                    }
+                    break;
+                case ("Asian or Pacific Islander"):
+                    switch (this.major) {
+                        case ("Biological and Agricultural Sciences"):
+                            this.percent =  46;
+                            break;
+                        case ("Engineering"):
+                            this.percent =  35;
+                            break;
+                        case ("Mathematics, Statistics, and Computer Sciences"):
+                            this.percent =  59;
+                            break;
+                        case ("Physical Sciences"):
+                            this.percent =  51;
+                            break;
+                        case ("Social and Behavioral Sciences"):
+                            this.percent =  127;
+                            break;
+                        default:
+                            this.percent =  58;
+                            break;
+                    }
+                    break;
+                case ("Black"):
+                    switch (this.major) {
+                        case ("Biological and Agricultural Sciences"):
+                            this.percent =  15;
+                            break;
+                        case ("Engineering"):
+                            this.percent =  10;
+                            break;
+                        case ("Mathematics, Statistics, and Computer Sciences"):
+                            this.percent =  43;
+                            break;
+                        case ("Physical Sciences"):
+                            this.percent =  21;
+                            break;
+                        case ("Social and Behavioral Sciences"):
+                            this.percent =  64;
+                            break;
+                        default:
+                            this.percent =  32;
+                            break;
+                    }
+                    break;
+                case ("Hispanic or Latio"):
+                    switch (this.major) {
+                        case ("Biological and Agricultural Sciences"):
+                            this.percent =  19;
+                            break;
+                        case ("Engineering"):
+                            this.percent =  17;
+                            break;
+                        case ("Mathematics, Statistics, and Computer Sciences"):
+                            this.percent =  45;
+                            break;
+                        case ("Physical Sciences"):
+                            this.percent =  26;
+                            break;
+                        case ("Social and Behavioral Sciences"):
+                            this.percent =  57;
+                            break;
+                        default:
+                            this.percent =  33;
+                            break;
+                    }
+                    break;
+                case ("American Indian or Alaska Native"):
+                    switch (this.major) {
+                        case ("Biological and Agricultural Sciences"):
+                            this.percent =  21;
+                            break;
+                        case ("Engineering"):
+                            this.percent =  12;
+                            break;
+                        case ("Mathematics, Statistics, and Computer Sciences"):
+                            this.percent =  34;
+                            break;
+                        case ("Physical Sciences"):
+                            this.percent =  26;
+                            break;
+                        case ("Social and Behavioral Sciences"):
+                            this.percent =  62;
+                            break;
+                        default:
+                            this.percent =  34;
+                            break;
+                    }
+                    break;
+                default:
+                    switch (this.major) {
+                        case ("Biological and Agricultural Sciences"):
+                            this.percent =  32;
+                            break;
+                        case ("Engineering"):
+                            this.percent =  27;
+                            break;
+                        case ("Mathematics, Statistics, and Computer Sciences"):
+                            this.percent =  73;
+                            break;
+                        case ("Physical Sciences"):
+                            this.percent =  35;
+                            break;
+                        case ("Social and Behavioral Sciences"):
+                            this.percent =  92;
+                            break;
+                        default:
+                            this.percent =  50;
+                            break;
+                    }
+                    break;
+            }
+            break;
+    }
+    /*
+    this.sex = null;
+    this.ethnicity = null;
+    this.major = null;
+    */
 };

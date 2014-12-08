@@ -8,8 +8,10 @@ var round = 0;
 var playerEnd = false;
 
 var test = true;
+var spawn = true;
 
 var update = function (game, params, audio) {
+    console.log(params.percent);
 
     // Calls the update function for all objects
 	[game.world.platforms,
@@ -44,7 +46,7 @@ var update = function (game, params, audio) {
         game.world.end = true;
     } else if (game.world.players.length < 1) {
        game.world.died = true; 
-    } else if (test) {
+    } else if (spawn && params.percent < 40) {
         // End Flag
         game.world.assets.push (new EndLine(game.world, {
             x: game.world.width - 60,
@@ -116,8 +118,8 @@ var update = function (game, params, audio) {
             speed: 2
         }));
 
-        test = false;
-    } else if (test) {
+        spawn = false;
+    } else if (spawn && 40 <= params.percent && params.percent < 60) {
         // Basic Set up (?)
 
         // Spikes
@@ -174,8 +176,8 @@ var update = function (game, params, audio) {
             height: 200
         }));
 
-        test = false;
-    } else if (test) {
+        spawn = false;
+    } else if (spawn && 60 <= params.percent && params.percent < 80) {
         // End Flag
         game.world.assets.push (new EndLine(game.world, {
             x: game.world.width - 60,
@@ -184,7 +186,63 @@ var update = function (game, params, audio) {
         }));
 
         // Spikes
-        game.world.spikes.push (new Spike(game.world));
+        game.world.spikes.push (new Spike(game.world, {
+            x : game.world.width / 4,
+            width : game.world.width / 2
+        }));
+
+        // Moving Spikes
+        game.world.spikes.push (new MovingSpike(game.world, {
+            topBound: 1,
+            bottomBound: game.world.height - 100
+        }));
+        game.world.spikes.push (new MovingSpike(game.world, {
+            rightBound: game.world.width - 100,
+            leftBound: 100
+        }));
+
+        // The floor
+        game.world.platforms.push (new Platform(game.world, {
+            x: 0,
+            y: game.world.height - 30,
+            width: game.world.width,
+            height: 200
+        }));
+
+        // Platforms
+        game.world.platforms.push(new Platform(game.world, {
+			x: 175,
+			y: 250
+		}))
+		game.world.platforms.push(new Platform(game.world, {
+			x: 375,
+			y: 250
+		}));
+		game.world.platforms.push(new Platform(game.world, {
+			x: 210,
+			y: 196
+		}));
+		game.world.platforms.push(new Platform(game.world, {
+			x: 340,
+			y: 196
+		}));
+		game.world.platforms.push(new Platform(game.world, {
+			x: game.world.width / 2 - 25,
+			y: 154
+		}));
+
+        spawn = false;
+    } else if (spawn && 80 <= params.percent) {
+        // End Flag
+        game.world.assets.push (new EndLine(game.world, {
+            x: game.world.width - 60,
+            y: game.world.height - 60,
+            spriteName: "endFlag"
+        }));
+
+        // Spikes
+        game.world.spikes.push (new Spike(game.world, {
+        }));
 
         // Moving Spikes
         game.world.spikes.push (new MovingSpike(game.world, {
@@ -242,44 +300,7 @@ var update = function (game, params, audio) {
             y: 83
         }));
 
-        test = false;
-	} else if (minionTime && round == 0) {
-        game.world.platforms.push(new Platform(game.world, {
-			x: 175,
-			y: 250,
-		}));
-		game.world.platforms.push(new Platform(game.world, {
-			x: 375,
-			y: 250,
-		}));
-		game.world.platforms.push(new Platform(game.world, {
-			x: 130,
-			y: 196,
-		}));
-		game.world.platforms.push(new Platform(game.world, {
-			x: 420,
-			y: 196,
-		}));
-        game.world.platforms.push(new Platform(game.world, {
-            x: 130,
-            y: 140
-        }));
-        game.world.platforms.push(new Platform(game.world, {
-            x: 420,
-            y: 140
-        }));
-        game.world.platforms.push(new Platform(game.world, {
-            x: 175,
-            y: 83
-        }));
-        game.world.platforms.push(new Platform(game.world, {
-            x: 375,
-            y: 83
-        }));
-        game.world.platforms.push(new Platform(game.world, {
-            x: 275,
-            y: 83
-        }));
-
+        spawn = false;
 	}
+
 };
