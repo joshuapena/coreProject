@@ -1,6 +1,6 @@
 "use strict";
 
-var Player = function(world, audio) {
+var Player = function(world, audio, controlOptions) {
 	this.world = world;
 	this.audio = audio;
 	this.idleLeftAnimation = new SpriteAnimation("connor/connorL", 2, 1, 32);
@@ -45,6 +45,9 @@ var Player = function(world, audio) {
 
     this.lives = 1;
     this.reachEnd = false;
+    if (controlOptions.hasController) {
+        this.controller = new Controller(controlOptions.num);
+    }
 };
 
 var keydown = [];
@@ -68,8 +71,12 @@ Player.prototype.collide = function(y) {
 };
 
 Player.prototype.update = function() {
+    this.controller.update();
+
 	// Jump
-	if (keydown[38]) {
+	if (keydown[38] || 
+            this.controller.buttonA || 
+            this.controller.yAxis < -0.5) {
 		if (!this.jumping) {
 			this.jumping = true;
 			this.jumpDown = false;
@@ -78,7 +85,8 @@ Player.prototype.update = function() {
 	}
 	
 	// Right
-	if (keydown[39]) {
+	if (keydown[39] || 
+            0.5 < this.controller.xAxis) {
 		if (this.velX < this.speed) {
 			this.velX++;
 			this.direction = "right";
@@ -86,7 +94,8 @@ Player.prototype.update = function() {
 	}
 	
 	// Left
-	if (keydown[37]) {
+	if (keydown[37] || 
+            this.controller.xAxis < -0.5) {
 		if (this.velX > -this.speed) {
 			this.velX--;
 			this.direction = "left";

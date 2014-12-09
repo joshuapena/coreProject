@@ -1,6 +1,6 @@
 "use strict";
 
-var start = function(params) {
+var start = function(params, controlOptions) {
 	document.getElementById("world").style.display = "inline";
 	document.getElementById("instructions").style.display = "inline";
 	document.getElementById("startButton").style.display = "none";
@@ -14,7 +14,7 @@ var start = function(params) {
 
     params.setPercent();
 	
-	var game = new Game(document.getElementById("world"), sprites, audio, params);
+	var game = new Game(document.getElementById("world"), sprites, audio, params, controlOptions);
 }
 
 function initGame() {

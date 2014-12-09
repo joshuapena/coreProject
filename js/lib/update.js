@@ -11,8 +11,6 @@ var test = true;
 var spawn = true;
 
 var update = function (game, params, audio) {
-    console.log(params.percent);
-
     // Calls the update function for all objects
 	[game.world.platforms,
      game.world.spikes

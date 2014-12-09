@@ -81,17 +81,17 @@ Params.prototype.undoMajor = function() {
 };
 
 Params.prototype.check = function() {
-    if (this.sexChosen) {
+    if (!this.sexChosen) {
         document.getElementById("checkSex").style.display = "inline";
     } else {
         document.getElementById("checkSex").style.display = "none";
     }
-    if (this.ethnicityChosen) {
+    if (!this.ethnicityChosen) {
         document.getElementById("checkEthnicity").style.display = "inline";
     } else {
         document.getElementById("checkEthnicity").style.display = "none";
     }
-    if (this.majorChosen) {
+    if (!this.majorChosen) {
         document.getElementById("checkMajor").style.display = "inline";
     } else {
         document.getElementById("checkMajor").style.display = "none";
@@ -99,8 +99,12 @@ Params.prototype.check = function() {
 
     if (this.sexChosen && this.ethnicityChosen && this.majorChosen) {
         document.getElementById("startButton").style.display = "inline";
+        document.getElementById("controllerPrompt").style.display = "inline";
+        document.getElementById("controllerDisplay").style.display = "inline";
     } else {
         document.getElementById("startButton").style.display = "none";
+        document.getElementById("controllerPrompt").style.display = "none";
+        document.getElementById("controllerDisplay").style.display = "none";
     }
 };
 

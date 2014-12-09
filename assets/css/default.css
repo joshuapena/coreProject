@@ -44,6 +44,14 @@ body {
 	display: none;
 }
 
+#controllerPrompt {
+	display: none;
+}
+
+#controllerDisplay {
+	display: none;
+}
+
 #world {
 	border: 1px solid black;
 	display: none;

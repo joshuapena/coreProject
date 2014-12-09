@@ -5,6 +5,7 @@
 		<meta charset="utf-8" />
 		<title>Core Project</title>
 		<link rel="stylesheet" href="assets/css/default.css" />
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
 	</head>
 	<body>
 		<div class="container">
@@ -19,6 +20,7 @@
 
 			<div class="container" id="sex">
 				<p id="checkSex" >Please choose a 'Sex'</p>
+				<br>
 				<input id="male" value="Male" 
 					onclick="params.chooseSex('Male')" type="button">
 				<input id="female" value="Female" 
@@ -26,10 +28,12 @@
 				<input id="noAnswerSex" value="Skip" 
 					onclick="params.chooseSex('Skip')" type="Button">
 				<br>
+				<br>
 			</div>
 
 			<div class="container" id="ethnicity">
-				<p id="checkEthnicity">Please choose a 'Ethinicity'</p>
+				<p id="checkEthnicity">Please choose an 'Ethinicity'</p>
+				<br>
 				<input id="white" value="White" 
 					onclick="params.chooseEthnicity('White')" type="button">
 				<input id="asian" value="Asian or Pacific Islander" 
@@ -43,10 +47,12 @@
 				<input id="noAnswerEthnicity" value="Skip" 
 					onclick="params.chooseEthnicity('Skip')" type="button">
 				<br>
+				<br>
 			</div>
 
 			<div class="container" id="major">
 				<p id="checkMajor">Please choose a 'Major'</p>
+				<br>
 				<input id="bio" value="Biological and Agricultural Sciences"
 					onclick="params.chooseMajor('Biological and Agricultural Sciences')" type="button">
 				<input id="engineering" value="Engineering"
@@ -79,7 +85,10 @@
 		</div>
 
 		<div id="canvasContainer">
-			<input id="startButton" type="button" value="Start" onclick="start(params)" />
+			<div id="controllerPrompt"></div>
+			<div id="controllerDisplay"></div>
+			<br/>
+			<input id="startButton" type="button" value="Start" onclick="start(params, control)" />
 			<canvas id="world" width="600" height="300">
 				This browser can not run this game (canvas support missing).
 			</canvas>
@@ -89,6 +98,7 @@
 		
 		<script type="text/javascript" src="js/lib/Game.js"></script>
 		<script type="text/javascript" src="js/lib/getParams.js"></script>
+		<script type="text/javascript" src="js/lib/gameController.js"></script>
 		<script type="text/javascript" src="js/lib/init.js"></script>
 		<script type="text/javascript" src="js/lib/SpriteLoader.js"></script>
 		<script type="text/javascript" src="js/lib/SoundLoader.js"></script>

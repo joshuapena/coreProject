@@ -1,4 +1,4 @@
-var Game = function(canvas, sprites, audio, params) {
+var Game = function(canvas, sprites, audio, params, controlOptions) {
 	this.fps = 60;
 	var canvas = canvas;
 	this.ctx = canvas.getContext("2d");
@@ -18,7 +18,7 @@ var Game = function(canvas, sprites, audio, params) {
 	
 	this.world = new World(this.ctx, worldOptions, this.sprites);
 	
-	this.world.addPlayer(new Player(this.world, this.audio));
+	this.world.addPlayer(new Player(this.world, this.audio, controlOptions));
 	
 	var game = this;
 	
